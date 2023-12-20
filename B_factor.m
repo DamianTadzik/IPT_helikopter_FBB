@@ -1,7 +1,7 @@
 function [Bpl, Bmin] = B_factor(B)
     % faktoryzacja wielomianu B
-    Bmin = B(1); % niestabilny
-    Bpl = 1; % stabilny
+    Bmin = B(1);    % niestabilny
+    Bpl = 1;        % stabilny
     nB = length(B)-1;
     if nB > 0
         rB = roots(B);
@@ -12,7 +12,7 @@ function [Bpl, Bmin] = B_factor(B)
                 rBmin(1, ss) = rB(i);
                 ss = ss + 1;
             else
-                rBpl(1,kk) = rB(i) ;kk = kk + 1 ;
+                rBpl(1, kk) = rB(i) ;kk = kk + 1 ;
             end
         end
         if ss > 1, Bmin = B(1) * poly(rBmin); end
